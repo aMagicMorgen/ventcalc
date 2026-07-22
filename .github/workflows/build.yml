@@ -35,7 +35,7 @@ jobs:
       run: flutter build apk --release --target-platform ${{ matrix.arch }}
     
     - name: 📤 Upload APK for ${{ matrix.arch }}
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: app-${{ matrix.arch }}
         path: build/app/outputs/flutter-apk/app-${{ matrix.arch }}-release.apk
