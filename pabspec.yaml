@@ -1,7 +1,15 @@
+name: vent_calc
+description: "Калькулятор для проверки вентиляции"
+publish_to: 'none'
+version: 1.0.0+1
+
+# ⬇️ ЭТУ СЕКЦИЮ НУЖНО ДОБАВИТЬ ⬇️
+environment:
+  sdk: '^3.0.0'  # Минимальная версия Dart SDK
+
 dependencies:
   flutter:
     sdk: flutter
-  # Дополнительные пакеты (опционально)
   flutter_localizations:
     sdk: flutter
 
