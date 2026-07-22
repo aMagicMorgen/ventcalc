@@ -12,9 +12,8 @@ jobs:
       - name: 📥 Checkout code
         uses: actions/checkout@v4
 
-      - name: 📂 List files (debug)
+      - name: 📂 Debug - show files
         run: ls -la
-        # 👆 Это покажет, что лежит в корне
 
       - name: ⚙️ Setup Java
         uses: actions/setup-java@v4
@@ -29,19 +28,13 @@ jobs:
           channel: 'stable'
 
       - name: 📦 Get dependencies
-        run: |
-          ls -la
-          cd vent_calc || exit 1
-          flutter pub get
-        # 👆 Пытаемся зайти в папку vent_calc
+        run: flutter pub get
 
       - name: 🔨 Build APK
-        run: |
-          cd vent_calc || exit 1
-          flutter build apk --release
+        run: flutter build apk --release
 
       - name: 📤 Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: app-release
-          path: vent_calc/build/app/outputs/flutter-apk/app-release.apk
+          path: build/app/outputs/flutter-apk/app-release.apk
